@@ -1,0 +1,9 @@
+--> lightweight compared to processes
+--> share their parent process data and code
+--> context switching between threads is usually less expensive than between processes
+--> intercommunication is relatively easy
+
+====Java provides two ways to create a thread programmatically ===
+
+--> runnable interface
+--> thread class
