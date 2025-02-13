@@ -29,12 +29,14 @@ class Counter implements Runnable {
         return c;
     }
     @Override
-    public void run(){
-        //increment
-        this.increment();
-        System.out.println("Value after increase "+Thread.currentThread().getName()+" "+this.getValue());
-        //decrement
-        this.decrement();
-        System.out.println("Value after decrease "+Thread.currentThread().getName()+" "+this.getValue());
+    public void run() {
+        synchronized (this) {
+            //increment
+            this.increment();
+            System.out.println("Value after increase " + Thread.currentThread().getName() + " " + this.getValue());
+            //decrement
+            this.decrement();
+            System.out.println("Value after decrease " + Thread.currentThread().getName() + " " + this.getValue());
+        }
     }
 }
